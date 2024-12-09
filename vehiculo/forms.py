@@ -1,6 +1,7 @@
 from .models import Vehiculo
 from django.forms import ModelForm
 
+# Añadir autos
 class Add(ModelForm):
     class Meta:
         model = Vehiculo

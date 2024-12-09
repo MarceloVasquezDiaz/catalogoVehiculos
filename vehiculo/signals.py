@@ -11,7 +11,7 @@ def assign_view_catalog_permission(sender, instance, created, **kwargs):
     """
     Asigna automáticamente el permiso 'visualizar_catalogo' al registrar un nuevo usuario.
     """
-    if created:  # Solo se ejecuta al crear un nuevo usuario
+    if created:
         # Buscar el permiso 'visualizar_catalogo'
         content_type = ContentType.objects.get(app_label='vehiculo', model='Vehiculo')
         permission = Permission.objects.get(codename='visualizar_catalogo', content_type=content_type)

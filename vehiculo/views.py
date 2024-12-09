@@ -56,7 +56,7 @@ def registro(request):
             usuario.set_password(formulario.cleaned_data['password'])
             usuario.save()
 
-            # Asignar permiso automáticamente
+            # Permiso de visualización automatico
             content_type = ContentType.objects.get(app_label='vehiculo', model='vehiculo')
             permiso = Permission.objects.get(codename='visualizar_catalogo', content_type=content_type)
             usuario.user_permissions.add(permiso)
