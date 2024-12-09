@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h2>Ingreso del Vehiculo</h2>
+    <form method = "post">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type='submit'>Enviar</button>
+    </form>
+{% endblock %}
